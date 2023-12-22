@@ -87,3 +87,10 @@ var finances = [
     ['Feb-2017', 671099],
   ];
   
+  console.log("Financial Analysis");
+  console.log("----------------");
+  console.log("Total Months:" + finances.length);
+  console.log("Total:" + );
+  console.log("Average change:" + );
+  console.log("Greatest Increase in Profits/Losses:" + );
+  console.log("Greatest Decrease in Profits/Losses:" + );
