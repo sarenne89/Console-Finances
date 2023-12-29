@@ -114,10 +114,11 @@ for (let i = 0; i < finances.length-1; i++) {
   let change = finances[i].concat(finances[i+1][1]);
   let newChange = change[2] -= change[1];
   console.log(newChange);
+  //let monthlyChange = finances.push(newChange)
 }
+//console.log(monthlyChange)
 
-//let change = (finances[1][1]) - finances[0][1]
-//console.log
-//console.log("Average change:" + averageChange);
-// console.log("Greatest Increase in Profits/Losses:" + );
-// console.log("Greatest Decrease in Profits/Losses:" + );
+console.log("Average change:");
+console.log("Greatest Increase in Profits/Losses:" );
+console.log("Greatest Decrease in Profits/Losses:" );
+ 
