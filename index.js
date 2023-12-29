@@ -98,27 +98,21 @@ const total = finances.reduce((accumulator, finances) => {
   }, 0);
 console.log("Total: $" + total);
 
-//let averageChange = []
-//for (let i = 0; i < finances.length; i++) {
-//  let tempNumber = i += 1
-//  let change = ((finances[tempNumber][1])-(finances[i][1]));
-//  console.log(change)
-//}
-//let i = 1;
-//let exNumber = i + 1;
-//let exChange = ((finances[exNumber][1])-(finances[i][1]));
-//finances[i][]
-//console.log(exChange);
-
+let monthlyChanges = [];
 for (let i = 0; i < finances.length-1; i++) {
   let change = finances[i].concat(finances[i+1][1]);
   let newChange = change[2] -= change[1];
-  console.log(newChange);
-  //let monthlyChange = finances.push(newChange)
+  monthlyChanges.push(newChange);   
+  }
+let sumChanges = 0
+for (let j = 0; j < monthlyChanges.length; j++) {
+  sumChanges += monthlyChanges[j];
 }
-//console.log(monthlyChange)
+let averageChange = sumChanges /= finances.length-1;
+let averageChangeFixed = averageChange.toFixed(2)
 
-console.log("Average change:");
-console.log("Greatest Increase in Profits/Losses:" );
-console.log("Greatest Decrease in Profits/Losses:" );
+
+console.log("Average change: $" + averageChangeFixed);
+console.log("Greatest Increase in Profits/Losses: $" );
+console.log("Greatest Decrease in Profits/Losses: $" );
  
