@@ -104,10 +104,17 @@ console.log("Total: $" + total);
 //  let change = ((finances[tempNumber][1])-(finances[i][1]));
 //  console.log(change)
 //}
-let i = 1;
-let exNumber = i + 1;
-let exChange = ((finances[exNumber][1])-(finances[i][1]));
-console.log(exChange);
+//let i = 1;
+//let exNumber = i + 1;
+//let exChange = ((finances[exNumber][1])-(finances[i][1]));
+//finances[i][]
+//console.log(exChange);
+
+for (let i = 0; i < finances.length-1; i++) {
+  let change = finances[i].concat(finances[i+1][1]);
+  let newChange = change[2] -= change[1];
+  console.log(newChange);
+}
 
 //let change = (finances[1][1]) - finances[0][1]
 //console.log
