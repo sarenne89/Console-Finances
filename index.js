@@ -104,8 +104,8 @@ for (let i = 0; i < finances.length-1; i++) {
   monthlyChanges.push(newChange);   
   }
 let sumChanges = 0
-for (let j = 0; j < monthlyChanges.length; j++) {
-  sumChanges += monthlyChanges[j];
+for (let i = 0; i < monthlyChanges.length; i++) {
+  sumChanges += monthlyChanges[i];
 }
 let averageChange = sumChanges /= finances.length-1;
 let averageChangeFixed = averageChange.toFixed(2)
@@ -115,13 +115,13 @@ let changesArray = []
 for (let i = 0; i < finances.length-1; i++) {
   let change = finances[i].concat(finances[i+1][1]);
   let newChange = change[2] -= change[1];
-  changesArray.push(finances[i+1] + "," + newChange)
+  changesArray.push(finances[i+1][0] + "," + newChange)
 }
 //console.log(changesArray);
 let sortedChanges = changesArray.sort((a, b) => {
   return a[2] - b[2];
- })
- console.log(sortedChanges);
+})
+console.log(sortedChanges);
 console.log("Greatest Increase in Profits/Losses: $" );
 //GREATEST DECREASE
 console.log("Greatest Decrease in Profits/Losses: $" );
