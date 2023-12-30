@@ -115,7 +115,7 @@ let changesArray = []
 for (let i = 0; i < finances.length-1; i++) {
   let change = finances[i].concat(finances[i+1][1]);
   let newChange = change[2] -= change[1];
-  changesArray.push(finances[i] + "," + newChange)
+  changesArray.push(finances[i+1] + "," + newChange)
 }
 //console.log(changesArray);
 let sortedChanges = changesArray.sort((a, b) => {
