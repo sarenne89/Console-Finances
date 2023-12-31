@@ -105,21 +105,28 @@ for (let i = 0; i < finances.length-1; i++) {
   let change = finances[i].concat(finances[i+1][1]);
   let newChange = change[2] -= change[1];
   monthlyChanges.push(newChange)
-  changesArray.push(newChange + " " + finances[i+1][0]);   
+  changesArray.push(newChange, finances[i+1][0]);   
   }
 let sumChanges = 0
 for (let i = 0; i < monthlyChanges.length; i++) {
   sumChanges += monthlyChanges[i];
 }
-console.log(monthlyChanges);
 let averageChange = sumChanges /= finances.length-1;
 let averageChangeFixed = averageChange.toFixed(2)
 console.log("Average change: $" + averageChangeFixed);
 
+console.log(changesArray);
+
 //GREATEST INCREASE
 const greatestIncrease = Math.max(...monthlyChanges);
-console.log("Greatest Increase in Profits/Losses: $" + greatestIncrease);
+const bestMonth = changesArray.findIndex((element) => element === greatestIncrease);
+console.log(bestMonth + 1);
+console.log(changesArray[bestMonth + 1])
+console.log("Greatest Increase in Profits/Losses: $" + greatestIncrease, changesArray[bestMonth + 1]);
 
 //GREATEST DECREASE
 const greatestDecrease= Math.min(...monthlyChanges);
-console.log("Greatest Decrease in Profits/Losses: $" + greatestDecrease);
+const worstMonth = changesArray.findIndex((element) => element ===greatestDecrease);
+console.log(worstMonth + 1)
+console.log(changesArray[worstMonth + 1])
+console.log("Greatest Decrease in Profits/Losses: $" + greatestDecrease, changesArray[worstMonth + 1]);
