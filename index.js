@@ -115,18 +115,16 @@ let averageChange = sumChanges /= finances.length-1;
 let averageChangeFixed = averageChange.toFixed(2)
 console.log("Average change: $" + averageChangeFixed);
 
-console.log(changesArray);
-
 //GREATEST INCREASE
 const greatestIncrease = Math.max(...monthlyChanges);
 const bestMonth = changesArray.findIndex((element) => element === greatestIncrease);
-console.log(bestMonth + 1);
-console.log(changesArray[bestMonth + 1])
+//console.log(bestMonth + 1);
+//console.log(changesArray[bestMonth + 1])
 console.log("Greatest Increase in Profits/Losses: $" + greatestIncrease, changesArray[bestMonth + 1]);
 
 //GREATEST DECREASE
 const greatestDecrease= Math.min(...monthlyChanges);
 const worstMonth = changesArray.findIndex((element) => element ===greatestDecrease);
-console.log(worstMonth + 1)
-console.log(changesArray[worstMonth + 1])
+//console.log(worstMonth + 1)
+//console.log(changesArray[worstMonth + 1])
 console.log("Greatest Decrease in Profits/Losses: $" + greatestDecrease, changesArray[worstMonth + 1]);
