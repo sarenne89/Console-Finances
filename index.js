@@ -86,7 +86,8 @@ var finances = [
     ['Jan-2017', 138230],
     ['Feb-2017', 671099],
 ];
- 
+
+//console.log(finances);
 console.log("Financial Analysis");
 console.log("----------------");
 //TOTAL MONTHS
@@ -96,33 +97,29 @@ const total = finances.reduce((accumulator, finances) => {
     return accumulator + finances[1];
   }, 0);
 console.log("Total: $" + total);
+
 //AVERAGE CHANGE
 let monthlyChanges = [];
+let changesArray = []
 for (let i = 0; i < finances.length-1; i++) {
   let change = finances[i].concat(finances[i+1][1]);
   let newChange = change[2] -= change[1];
-  monthlyChanges.push(newChange);   
+  monthlyChanges.push(newChange)
+  changesArray.push(newChange + " " + finances[i+1][0]);   
   }
 let sumChanges = 0
 for (let i = 0; i < monthlyChanges.length; i++) {
   sumChanges += monthlyChanges[i];
 }
+console.log(monthlyChanges);
 let averageChange = sumChanges /= finances.length-1;
 let averageChangeFixed = averageChange.toFixed(2)
 console.log("Average change: $" + averageChangeFixed);
+
 //GREATEST INCREASE
-let changesArray = []
-for (let i = 0; i < finances.length-1; i++) {
-  let change = finances[i].concat(finances[i+1][1]);
-  let newChange = change[2] -= change[1];
-  changesArray.push(finances[i+1][0] + "," + newChange)
-}
-//console.log(changesArray);
-let sortedChanges = changesArray.sort((a, b) => {
-  return a[2] - b[2];
-})
-console.log(sortedChanges);
-console.log("Greatest Increase in Profits/Losses: $" );
+const greatestIncrease = Math.max(...monthlyChanges);
+console.log("Greatest Increase in Profits/Losses: $" + greatestIncrease);
+
 //GREATEST DECREASE
-console.log("Greatest Decrease in Profits/Losses: $" );
- 
+const greatestDecrease= Math.min(...monthlyChanges);
+console.log("Greatest Decrease in Profits/Losses: $" + greatestDecrease);
